@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Contact: Identifiable {
+class Contact: Identifiable, ObservableObject {
+    
     var id = UUID()
     var name: String
     var nickname: String
@@ -23,4 +24,29 @@ struct Contact: Identifiable {
     var reddit: String
     var tiktok: String
     var otherInfo: String
+    
+    
+    internal init(id: UUID = UUID(), name: String, nickname: String, description: String, phoneNumber: String, email: String, facebook: String, twitter: String, youtube: String, instagram: String, snapchat: String, tumblr: String, reddit: String, tiktok: String, otherInfo: String) {
+        self.id = id
+        self.name = name
+        self.nickname = nickname
+        self.description = description
+        self.phoneNumber = phoneNumber
+        self.email = email
+        self.facebook = facebook
+        self.twitter = twitter
+        self.youtube = youtube
+        self.instagram = instagram
+        self.snapchat = snapchat
+        self.tumblr = tumblr
+        self.reddit = reddit
+        self.tiktok = tiktok
+        self.otherInfo = otherInfo
+    }
 }
+
+let sampleContacts = [
+    Contact(name: "Moonshadow", nickname: "Moony", description: "My cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
+    Contact(name: "Magnus", nickname: "Maggie", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
+    Contact(name: "Zephyr", nickname: "Zephyr", description: "Yet another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat")
+]
