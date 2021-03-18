@@ -18,7 +18,7 @@ struct ContentView: View {
             List(store.contacts) {contact in
                 ContactListView (contact: contact)
             }
-            
+            .navigationTitle ("Contacts")
         }
         
     }
