@@ -11,7 +11,19 @@ struct ContactListView: View {
     var contact: Contact
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text("🙂")
+                .font(.largeTitle)
+            VStack(alignment: .leading) {
+                Text(contact.name)
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                Text(contact.description)
+                    .font(.subheadline)
+                    .fontWeight(.regular)
+            }
+            Spacer()
+        }
     }
 }
 
