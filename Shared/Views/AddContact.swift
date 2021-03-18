@@ -50,10 +50,20 @@ struct AddContact: View {
                     }
                 }
             }
+            .navigationTitle("Create Contact")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Save"){
+                        
+                    }
+                }
+            }
         }
     }
+    
+    
+    
 }
-
 struct AddContact_Previews: PreviewProvider {
     static var previews: some View {
         AddContact(store: testStore)
