@@ -61,7 +61,22 @@ struct AddContact: View {
         }
     }
     
-    
+    func saveContact () {
+        store.contacts.append(Contact(name: name,
+                                      nickname: nickname,
+                                      description: description,
+                                      phoneNumber: phoneNumber,
+                                      email: email,
+                                      facebook: facebook,
+                                      twitter: twitter,
+                                      youtube: youtube,
+                                      instagram: instagram,
+                                      snapchat: snapchat,
+                                      tumblr: tumblr,
+                                      reddit: reddit,
+                                      tiktok: tiktok,
+                                      otherInfo: otherInfo))
+    }
     
 }
 struct AddContact_Previews: PreviewProvider {

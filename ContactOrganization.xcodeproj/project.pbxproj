@@ -16,6 +16,7 @@
 		25005BBF260381F8008DCE4D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005BBE260381F8008DCE4D /* Contact.swift */; };
 		25005BC32603835C008DCE4D /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005BC22603835C008DCE4D /* AddContact.swift */; };
 		25005BC726038475008DCE4D /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005BC626038475008DCE4D /* ContactStore.swift */; };
+		25005BD526038C15008DCE4D /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005BD426038C15008DCE4D /* ContactListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		25005BBE260381F8008DCE4D /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		25005BC22603835C008DCE4D /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
 		25005BC626038475008DCE4D /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
+		25005BD426038C15008DCE4D /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				25005B9A2603815B008DCE4D /* ContentView.swift */,
 				25005BC22603835C008DCE4D /* AddContact.swift */,
+				25005BD426038C15008DCE4D /* ContactListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				25005BC32603835C008DCE4D /* AddContact.swift in Sources */,
 				25005BBF260381F8008DCE4D /* Contact.swift in Sources */,
 				25005BAE26038168008DCE4D /* ContentView.swift in Sources */,
+				25005BD526038C15008DCE4D /* ContactListView.swift in Sources */,
 				25005BAC26038168008DCE4D /* ContactOrganizationApp.swift in Sources */,
 				25005BC726038475008DCE4D /* ContactStore.swift in Sources */,
 			);
