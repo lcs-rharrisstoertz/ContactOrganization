@@ -13,6 +13,7 @@
 		25005BAF26038168008DCE4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005B9A2603815B008DCE4D /* ContentView.swift */; };
 		25005BB026038168008DCE4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25005B9B26038168008DCE4D /* Assets.xcassets */; };
 		25005BB126038168008DCE4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25005B9B26038168008DCE4D /* Assets.xcassets */; };
+		25005BBF260381F8008DCE4D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25005BBE260381F8008DCE4D /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		25005BA826038168008DCE4D /* ContactOrganization.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactOrganization.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25005BAA26038168008DCE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25005BAB26038168008DCE4D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		25005BBE260381F8008DCE4D /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				25005B992603815B008DCE4D /* ContactOrganizationApp.swift */,
-				25005B9A2603815B008DCE4D /* ContentView.swift */,
+				25005BBC260381B4008DCE4D /* Model */,
+				25005BBD260381C0008DCE4D /* Views */,
 				25005B9B26038168008DCE4D /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -88,6 +91,22 @@
 				25005BAB26038168008DCE4D /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		25005BBC260381B4008DCE4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25005BBE260381F8008DCE4D /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		25005BBD260381C0008DCE4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				25005B9A2603815B008DCE4D /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25005BBF260381F8008DCE4D /* Contact.swift in Sources */,
 				25005BAE26038168008DCE4D /* ContentView.swift in Sources */,
 				25005BAC26038168008DCE4D /* ContactOrganizationApp.swift in Sources */,
 			);
