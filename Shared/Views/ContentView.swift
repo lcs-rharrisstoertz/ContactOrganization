@@ -17,8 +17,10 @@ struct ContentView: View {
         
         NavigationView {
             
-            List(store.contacts) {contact in
-                ContactListView (contact: contact)
+            List(store.contacts) { contact in
+                NavigationLink(destination: ContactInfo(contact: testStore.contacts[0])) {
+                    ContactListView(contact: contact)
+                }
             }
             .navigationTitle ("Contacts")
             .toolbar{
@@ -38,6 +40,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
         ContentView(store: testStore)
+        }
     }
 }
