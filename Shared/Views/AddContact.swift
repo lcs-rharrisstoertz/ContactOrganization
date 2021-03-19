@@ -26,6 +26,8 @@ struct AddContact: View {
     @State private var tiktok = ""
     @State private var otherInfo = ""
     
+    @Binding var showing: Bool
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -54,7 +56,8 @@ struct AddContact: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Save"){
-                        
+                        saveContact()
+                        showing = false
                     }
                 }
             }
@@ -81,6 +84,6 @@ struct AddContact: View {
 }
 struct AddContact_Previews: PreviewProvider {
     static var previews: some View {
-        AddContact(store: testStore)
+        AddContact(store: testStore, showing: .constant(true))
     }
 }

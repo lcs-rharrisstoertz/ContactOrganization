@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @ObservedObject var store: ContactStore
     
+    @State private var showingAddContact = false
+    
     var body: some View {
         
         NavigationView {
@@ -19,6 +21,16 @@ struct ContentView: View {
                 ContactListView (contact: contact)
             }
             .navigationTitle ("Contacts")
+            .toolbar{
+                ToolbarItem(placement: .primaryAction){
+                    Button("New contact") {
+                        showingAddContact = true
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddContact) {
+                AddContact(store:store, showing: $showingAddContact)
+            }
         }
         
     }
