@@ -18,7 +18,7 @@ struct ContentView: View {
         NavigationView {
             
             List(store.contacts) { contact in
-                NavigationLink(destination: ContactInfo(contact: testStore.contacts[0])) {
+                NavigationLink(destination: ContactInfo(contact: contact)) {
                     ContactListView(contact: contact)
                 }
             }
