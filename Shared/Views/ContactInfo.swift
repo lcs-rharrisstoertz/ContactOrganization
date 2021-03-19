@@ -11,6 +11,8 @@ struct ContactInfo: View {
     
     var contact: Contact
     
+    @ObservedObject var store: ContactStore
+    
     var body: some View {
         Form{
             Group{
@@ -58,13 +60,20 @@ struct ContactInfo: View {
             }
         }
         .navigationTitle(contact.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Delete"){
+                    //i need to add code to delete contact here
+                }
+            }
+        }
     }
 }
 
 struct ContactInfo_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ContactInfo(contact: testStore.contacts[0])
+            ContactInfo(contact: testStore.contacts[0], store: testStore)
         }
     }
 }
