@@ -54,9 +54,14 @@ struct AddContact: View {
             }
             .navigationTitle("Create Contact")
             .toolbar {
-                ToolbarItem(placement: .primaryAction) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save"){
                         saveContact()
+                        showing = false
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel"){
                         showing = false
                     }
                 }
