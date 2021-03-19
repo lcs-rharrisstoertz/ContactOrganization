@@ -33,22 +33,50 @@ struct AddContact: View {
             VStack{
                 Form {
                     Group {
-                        TextField("Name", text: $name)
-                        TextField("Nickname", text: $nickname)
-                        TextField("Description", text: $description)
-                        TextField("Phone number", text: $phoneNumber)
-                        TextField("Email", text: $email)
-                        TextField("Facebook", text: $facebook)
-                        TextField("Twitter", text: $twitter)
+                        Section(header: Text("Name")) {
+                            TextField("Name", text: $name)
+                        }
+                        Section(header: Text("Nickname")) {
+                            TextField("Nickname", text: $nickname)
+                        }
+                        Section(header: Text("Description")) {
+                            TextField("Description", text: $description)
+                        }
+                        Section(header: Text("Phone number")) {
+                            TextField("Phone number", text: $phoneNumber)
+                        }
+                        Section(header: Text("Email")) {
+                            TextField("Email", text: $email)
+                        }
+                        Section(header: Text("Facebook")) {
+                            TextField("Facebook", text: $facebook)
+                        }
+                        Section(header: Text("Twitter")) {
+                            TextField("Twitter", text: $twitter)
+                        }
                     }
                     Group {
-                        TextField("YouTube", text: $youtube)
-                        TextField("Instagram", text: $instagram)
-                        TextField("Snapchat", text: $snapchat)
-                        TextField("Tumblr", text: $tumblr)
-                        TextField("Reddit", text: $reddit)
-                        TextField("TikTok", text: $tiktok)
-                        TextField("Other information", text: $otherInfo)
+                        Section(header: Text("YouTube")) {
+                            TextField("YouTube", text: $youtube)
+                        }
+                        Section(header: Text("Instagram")) {
+                            TextField("Instagram", text: $instagram)
+                        }
+                        Section(header: Text("Snapchat")) {
+                            TextField("Snapchat", text: $snapchat)
+                        }
+                        Section(header: Text("Tumblr")) {
+                            TextField("Tumblr", text: $tumblr)
+                        }
+                        Section(header: Text("Reddit")) {
+                            TextField("Reddit", text: $reddit)
+                        }
+                        Section(header: Text("TikTok")) {
+                            TextField("TikTok", text: $tiktok)
+                        }
+                        Section(header: Text("Other information")) {
+                            TextField("Other information", text: $otherInfo)
+                        }
                     }
                 }
             }
