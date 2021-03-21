@@ -15,6 +15,14 @@ struct ContactInfo: View {
     
     var body: some View {
         Form{
+            HStack{
+                Spacer()
+                Image(contact.picture)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 200)
+                Spacer()
+            }
             Group{
                 if contact.nickname != "" {
                     Section(header: Text("Nickname")) {
