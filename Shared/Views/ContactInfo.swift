@@ -86,13 +86,6 @@ struct ContactInfo: View {
             }
         }
         .navigationTitle(contact.name)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Delete"){
-                    //i need to add code to delete contact here
-                }
-            }
-        }
     }
 }
 
