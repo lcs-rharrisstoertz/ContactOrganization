@@ -12,6 +12,7 @@ struct AddContact: View {
     @ObservedObject var store: ContactStore
     
     @State private var name = ""
+    @State private var picture = ""
     @State private var nickname = ""
     @State private var description = ""
     @State private var phoneNumber = ""
@@ -33,6 +34,7 @@ struct AddContact: View {
             VStack{
                 Form {
                     Group {
+                        
                         Section(header: Text("Name")) {
                             TextField("Name", text: $name)
                         }
@@ -99,7 +101,7 @@ struct AddContact: View {
     
     func saveContact () {
         store.contacts.append(Contact(name: name,
-                                      picture: "temporary string here",
+                                      picture: "temporary string, I need to replace this",
                                       nickname: nickname,
                                       description: description,
                                       phoneNumber: phoneNumber,
