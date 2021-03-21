@@ -99,6 +99,7 @@ struct AddContact: View {
     
     func saveContact () {
         store.contacts.append(Contact(name: name,
+                                      picture: "temporary string here",
                                       nickname: nickname,
                                       description: description,
                                       phoneNumber: phoneNumber,

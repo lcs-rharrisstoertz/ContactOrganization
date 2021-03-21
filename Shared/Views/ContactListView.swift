@@ -12,8 +12,10 @@ struct ContactListView: View {
     
     var body: some View {
         HStack{
-            Text("🙂")
-                .font(.largeTitle)
+            Image(contact.picture)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50.0, height: 50.0)
             VStack(alignment: .leading) {
                 Text(contact.name)
                     .font(.headline)
