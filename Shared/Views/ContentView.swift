@@ -27,10 +27,13 @@ struct ContentView: View {
             }
             .navigationTitle ("Contacts")
             .toolbar{
-                ToolbarItem(placement: .primaryAction){
+                ToolbarItem(placement: .navigationBarTrailing){
                     Button("New contact") {
                         showingAddContact = true
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading){
+                    EditButton()
                 }
             }
             .sheet(isPresented: $showingAddContact) {
