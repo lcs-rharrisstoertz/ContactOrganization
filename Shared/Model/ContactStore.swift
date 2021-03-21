@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ContactStore: ObservableObject {
     @Published var contacts: [Contact]
