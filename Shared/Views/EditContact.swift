@@ -11,23 +11,7 @@ import SwiftUI
 
 struct EditContact: View {
     
-    var contact: Contact
-    
-    @State private var name = ""
-    @State private var picture = ""
-    @State private var nickname = ""
-    @State private var description = ""
-    @State private var phoneNumber = ""
-    @State private var email = ""
-    @State private var facebook = ""
-    @State private var twitter = ""
-    @State private var youtube = ""
-    @State private var instagram = ""
-    @State private var snapchat = ""
-    @State private var tumblr = ""
-    @State private var reddit = ""
-    @State private var tiktok = ""
-    @State private var otherInfo = ""
+    @State var contact: Contact
     
 //    @State private var name = contact.name
 //    @State private var picture = contact.picture
@@ -57,48 +41,48 @@ struct EditContact: View {
                     Group {
                         
                         Section(header: Text("new Name")) {
-                            TextField("Name", text: $name)
+                            TextField("Name", text: $contact.name)
                         }
                         Section(header: Text("new Nickname")) {
-                            TextField("Nickname", text: $nickname)
+                            TextField("Nickname", text: $contact.nickname)
                         }
                         Section(header: Text("new Description")) {
-                            TextField("Description", text: $description)
+                            TextField("Description", text: $contact.description)
                         }
                         Section(header: Text("new Phone number")) {
-                            TextField("Phone number", text: $phoneNumber)
+                            TextField("Phone number", text: $contact.phoneNumber)
                         }
                         Section(header: Text("new Email")) {
-                            TextField("Email", text: $email)
+                            TextField("Email", text: $contact.email)
                         }
                         Section(header: Text("new Facebook")) {
-                            TextField("Facebook", text: $facebook)
+                            TextField("Facebook", text: $contact.facebook)
                         }
                         Section(header: Text("new Twitter")) {
-                            TextField("Twitter", text: $twitter)
+                            TextField("Twitter", text: $contact.twitter)
                         }
                     }
                     Group {
                         Section(header: Text("new YouTube")) {
-                            TextField("YouTube", text: $youtube)
+                            TextField("YouTube", text: $contact.youtube)
                         }
                         Section(header: Text("new Instagram")) {
-                            TextField("Instagram", text: $instagram)
+                            TextField("Instagram", text: $contact.instagram)
                         }
                         Section(header: Text("new Snapchat")) {
-                            TextField("Snapchat", text: $snapchat)
+                            TextField("Snapchat", text: $contact.snapchat)
                         }
                         Section(header: Text("new Tumblr")) {
-                            TextField("Tumblr", text: $tumblr)
+                            TextField("Tumblr", text: $contact.tumblr)
                         }
                         Section(header: Text("new Reddit")) {
-                            TextField("Reddit", text: $reddit)
+                            TextField("Reddit", text: $contact.reddit)
                         }
                         Section(header: Text("new TikTok")) {
-                            TextField("TikTok", text: $tiktok)
+                            TextField("TikTok", text: $contact.tiktok)
                         }
                         Section(header: Text("new information")) {
-                            TextField("Other information", text: $otherInfo)
+                            TextField("Other information", text: $contact.otherInfo)
                         }
                     }
                 }
@@ -121,20 +105,7 @@ struct EditContact: View {
     }
     
     func updateContact () {
-        contact.name = name
-        contact.nickname = nickname
-        contact.description = description
-        contact.phoneNumber = phoneNumber
-        contact.email = email
-        contact.facebook = facebook
-        contact.twitter = twitter
-        contact.youtube = youtube
-        contact.instagram = instagram
-        contact.snapchat = snapchat
-        contact.tumblr = tumblr
-        contact.reddit = reddit
-        contact.tiktok = tiktok
-        contact.otherInfo = otherInfo
+        //update contact here
     }
     
 }

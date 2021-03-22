@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContactInfo: View {
     
-    var contact: Contact
+    @State var contact: Contact
     
     @ObservedObject var store: ContactStore
+    
+    @State private var showingEditContact = false
     
     var body: some View {
         Form{
@@ -166,6 +168,16 @@ struct ContactInfo: View {
             }
         }
         .navigationTitle(contact.name)
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button("Edit contact") {
+                    showingEditContact = true
+                }
+            }
+        }
+        .sheet(isPresented: $showingEditContact) {
+            EditContact(contact: contact, store:store, showing: $showingEditContact)
+        }
     }
 }
 
