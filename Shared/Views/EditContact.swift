@@ -72,7 +72,6 @@ struct EditContact: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save changes"){
-                        updateContact()
                         showing = false
                     }
                 }
@@ -84,11 +83,6 @@ struct EditContact: View {
             }
         }
     }
-    
-    func updateContact () {
-        //update contact here
-    }
-    
 }
 
 //struct EditContact_Previews: PreviewProvider {
