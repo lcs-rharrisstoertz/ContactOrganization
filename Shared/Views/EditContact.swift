@@ -11,26 +11,7 @@ import SwiftUI
 
 struct EditContact: View {
     
-    @State var contact: Contact
-    
-//    @State private var name = contact.name
-//    @State private var picture = contact.picture
-//    @State private var nickname = contact.nickname
-//    @State private var description = contact.description
-//    @State private var phoneNumber = contact.phoneNumber
-//    @State private var email = contact.email
-//    @State private var facebook = contact.facebook
-//    @State private var twitter = contact.twitter
-//    @State private var youtube = contact.youtube
-//    @State private var instagram = contact.instagram
-//    @State private var snapchat = contact.snapchat
-//    @State private var tumblr = contact.tumblr
-//    @State private var reddit = contact.reddit
-//    @State private var tiktok = contact.tiktok
-//    @State private var otherInfo = contact.otherInfo
-    
-    
-    @ObservedObject var store: ContactStore
+    @ObservedObject var contact: Contact
     
     @Binding var showing: Bool
     
@@ -110,8 +91,8 @@ struct EditContact: View {
     
 }
 
-struct EditContact_Previews: PreviewProvider {
-    static var previews: some View {
-        EditContact(contact: testStore.contacts[0], store: testStore, showing: .constant(true))
-    }
-}
+//struct EditContact_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditContact(contact: testStore.contacts[0], store: testStore, showing: .constant(true))
+//    }
+//}
