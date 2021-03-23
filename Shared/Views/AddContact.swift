@@ -90,6 +90,7 @@ struct AddContact: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save"){
                         saveContact()
+                        fetchInstagramInfo()
                         showing = false
                     }
                 }
