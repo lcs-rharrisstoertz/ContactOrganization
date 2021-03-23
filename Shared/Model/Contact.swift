@@ -10,22 +10,22 @@ import SwiftUI
 
 class Contact: Identifiable, ObservableObject {
     
-    var id = UUID()
-    var picture: String
-    var name: String
-    var nickname: String
+    @Published var id = UUID()
+    @Published var picture: String
+    @Published var name: String
+    @Published var nickname: String
     @Published var description: String
-    var phoneNumber: String
-    var email: String
-    var facebook: String
-    var twitter: String
-    var youtube: String
-    var instagram: String
-    var snapchat: String
-    var tumblr: String
-    var reddit: String
-    var tiktok: String
-    var otherInfo: String
+    @Published var phoneNumber: String
+    @Published var email: String
+    @Published var facebook: String
+    @Published var twitter: String
+    @Published var youtube: String
+    @Published var instagram: String
+    @Published var snapchat: String
+    @Published var tumblr: String
+    @Published var reddit: String
+    @Published var tiktok: String
+    @Published var otherInfo: String
     
     
     internal init(id: UUID = UUID(), name: String, picture: String, nickname: String, description: String, phoneNumber: String, email: String, facebook: String, twitter: String, youtube: String, instagram: String, snapchat: String, tumblr: String, reddit: String, tiktok: String, otherInfo: String) {
