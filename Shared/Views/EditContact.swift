@@ -85,6 +85,7 @@ struct EditContact: View {
     }
 }
 
+
 //struct EditContact_Previews: PreviewProvider {
 //    static var previews: some View {
 //        EditContact(contact: testStore.contacts[0], store: testStore, showing: .constant(true))

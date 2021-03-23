@@ -176,7 +176,7 @@ struct ContactInfo: View {
             }
         }
         .sheet(isPresented: $showingEditContact) {
-            EditContact(contact: contact, store:store, showing: $showingEditContact)
+            EditContact(contact: contact, showing: $showingEditContact)
         }
     }
 }

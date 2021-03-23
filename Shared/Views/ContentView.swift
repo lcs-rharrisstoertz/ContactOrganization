@@ -13,7 +13,7 @@ struct ContentView: View {
     @ObservedObject var store: ContactStore
     
     @State private var showingAddContact = false
-    
+
     var body: some View {
         
         NavigationView {
@@ -38,6 +38,11 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingAddContact) {
                 AddContact(store:store, showing: $showingAddContact)
+            }
+        }
+        .onAppear() {
+            store.contacts = store.contacts.sorted {
+                $0.name < $1.name
             }
         }
         
