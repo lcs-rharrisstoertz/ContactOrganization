@@ -115,6 +115,9 @@ struct AddContact: View {
                                       reddit: reddit,
                                       tiktok: tiktok,
                                       otherInfo: otherInfo))
+        store.contacts = store.contacts.sorted {
+            $0.name < $1.name
+        }
     }
     
 }
