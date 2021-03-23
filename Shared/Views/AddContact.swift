@@ -89,8 +89,8 @@ struct AddContact: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save"){
+//                        fetchInstagramInfo(username: instagram)
                         saveContact()
-                        fetchInstagramInfo()
                         showing = false
                     }
                 }
@@ -125,10 +125,10 @@ struct AddContact: View {
             $0.name < $1.name
         }
     }
-    func fetchInstagramInfo() {
+    func fetchInstagramInfo(username: String) {
         
         // Set the address of the JSON endpoint
-        let url = URL(string: "https://www.instagram.com/\(instagram)/?__a=1")!
+        let url = URL(string: "https://www.instagram.com/\(username)/?__a=1")!
 
         // Configure a URLRequest instance
         // Defines what type of request will be sent to the address noted above
@@ -188,7 +188,7 @@ struct AddContact: View {
                 // Now, update the UI on the main thread
                 DispatchQueue.main.async {
 
-                    // Assign the result to the "someText" stored property
+                    // Assign the result to the contact info
                     name = decodedInstagramInfo.full_name
                     description = decodedInstagramInfo.biography
 
