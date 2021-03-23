@@ -5,6 +5,8 @@
 //  Created by Harris-Stoertz, Rowan on 2021-03-18.
 //
 // used tutorial from https://www.hackingwithswift.com/quick-start/swiftui/adding-swipe-to-delete-and-editbutton
+// and another tutorial from https://www.hackingwithswift.com/example-code/arrays/how-to-sort-an-array-using-sort
+
 
 import SwiftUI
 
