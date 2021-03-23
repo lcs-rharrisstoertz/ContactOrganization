@@ -50,7 +50,7 @@ struct ContentView: View {
         
     }
     func deleteItems(at offsets: IndexSet) {
-        testStore.contacts.remove(atOffsets: offsets)
+        store.contacts.remove(atOffsets: offsets)
     }
 }
 
