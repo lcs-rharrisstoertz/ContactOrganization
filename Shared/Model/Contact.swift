@@ -14,7 +14,7 @@ class Contact: Identifiable, ObservableObject {
     var picture: String
     var name: String
     var nickname: String
-    var description: String
+    @Published var description: String
     var phoneNumber: String
     var email: String
     var facebook: String

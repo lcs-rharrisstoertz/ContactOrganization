@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ContactOrganizationApp: App {
+    
+    // Create the source of truth
+    @StateObject private var contactsStore = ContactStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(store: testStore)
+            ContentView(store: contactsStore)
         }
     }
 }
