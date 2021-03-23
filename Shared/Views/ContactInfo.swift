@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactInfo: View {
     
-    @State var contact: Contact
+    @ObservedObject var contact: Contact
     
     @ObservedObject var store: ContactStore
     
