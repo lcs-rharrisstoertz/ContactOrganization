@@ -38,6 +38,9 @@ struct AddContact: View {
                         Section(header: Text("Name")) {
                             TextField("Name", text: $name)
                         }
+                        Section(header: Text("Emoji")) {
+                            TextField("Emoji", text: $picture)
+                        }
                         Section(header: Text("Nickname")) {
                             TextField("Nickname", text: $nickname)
                         }
@@ -101,7 +104,7 @@ struct AddContact: View {
     
     func saveContact () {
         store.contacts.append(Contact(name: name,
-                                      picture: "",
+                                      picture: picture,
                                       nickname: nickname,
                                       description: description,
                                       phoneNumber: phoneNumber,

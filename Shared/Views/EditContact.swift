@@ -24,6 +24,9 @@ struct EditContact: View {
                         Section(header: Text("new Name")) {
                             TextField("Name", text: $contact.name)
                         }
+                        Section(header: Text("new emoji")) {
+                            TextField("Emoji", text: $contact.picture)
+                        }
                         Section(header: Text("new Nickname")) {
                             TextField("Nickname", text: $contact.nickname)
                         }
