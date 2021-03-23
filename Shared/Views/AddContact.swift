@@ -103,7 +103,7 @@ struct AddContact: View {
     }
     
     func saveContact () {
-        if name == "" && picture == "" && nickname == "" && description == "" && phoneNumber == "" && email == "" && facebook == "" && twitter == "" && youtube == "" && instagram == "" && snapchat == "" && tumblr == "" && reddit == "" && tiktok == "" && otherInfo == "" {
+        if name != "" || picture != "" || nickname != "" || description != "" || phoneNumber != "" || email != "" || facebook != "" || twitter != "" || youtube != "" || instagram != "" || snapchat != "" || tumblr != "" || reddit != "" || tiktok != "" || otherInfo != "" {
             store.contacts.append(Contact(name: name,
                                           picture: picture,
                                           nickname: nickname,
