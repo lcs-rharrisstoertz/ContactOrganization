@@ -103,23 +103,25 @@ struct AddContact: View {
     }
     
     func saveContact () {
-        store.contacts.append(Contact(name: name,
-                                      picture: picture,
-                                      nickname: nickname,
-                                      description: description,
-                                      phoneNumber: phoneNumber,
-                                      email: email,
-                                      facebook: facebook,
-                                      twitter: twitter,
-                                      youtube: youtube,
-                                      instagram: instagram,
-                                      snapchat: snapchat,
-                                      tumblr: tumblr,
-                                      reddit: reddit,
-                                      tiktok: tiktok,
-                                      otherInfo: otherInfo))
-        store.contacts = store.contacts.sorted {
-            $0.name < $1.name
+        if name = "" && picture = "" && nickname = "" && description = "" && phoneNumber = "" && email = "" && facebook = "" && twitter = "" && youtube = "" && instagram = "" && snapchat = "" && tumblr = "" && reddit = "" && tiktok = "" && otherInfo = "" {
+            store.contacts.append(Contact(name: name,
+                                          picture: picture,
+                                          nickname: nickname,
+                                          description: description,
+                                          phoneNumber: phoneNumber,
+                                          email: email,
+                                          facebook: facebook,
+                                          twitter: twitter,
+                                          youtube: youtube,
+                                          instagram: instagram,
+                                          snapchat: snapchat,
+                                          tumblr: tumblr,
+                                          reddit: reddit,
+                                          tiktok: tiktok,
+                                          otherInfo: otherInfo))
+            store.contacts = store.contacts.sorted {
+                $0.name < $1.name
+            }
         }
     }
     
