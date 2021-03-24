@@ -9,10 +9,10 @@ import Foundation
 
 struct InstagramInfo: Decodable {
     let id: String
-    let user: User
+    let user: user
 }
 
-struct User: Decodable {
+struct user: Decodable {
     var biography: String
     var full_name: String
 }
