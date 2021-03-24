@@ -89,7 +89,7 @@ struct AddContact: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save"){
-//                        fetchInstagramInfo(username: instagram)
+                        fetchInstagramInfo(username: instagram)
                         saveContact()
                         showing = false
                     }
@@ -190,7 +190,7 @@ struct AddContact: View {
 
                     // Assign the result to the contact info
                     name = decodedInstagramInfo.full_name
-                    description = decodedInstagramInfo.biography
+//                    description = decodedInstagramInfo.biography
 
                 }
 
