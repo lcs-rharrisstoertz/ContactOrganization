@@ -20,14 +20,14 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                    ForEach(store.contacts) { contact in
-                        NavigationLink(destination: ContactInfo(contact: contact, store: store)) {
-                            ContactListView(contact: contact)
-                        }
+                ForEach(store.contacts) { contact in
+                    NavigationLink(destination: ContactInfo(contact: contact, store: store)) {
+                        ContactListView(contact: contact)
                     }
-                    .onDelete(perform: deleteItems)
+                }
+                .onDelete(perform: deleteItems)
             }
-            .navigationTitle ("Contacts")
+            .navigationTitle("Contacts")
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button("New contact") {
@@ -47,7 +47,6 @@ struct ContentView: View {
                 $0.name < $1.name
             }
         }
-        
     }
     func deleteItems(at offsets: IndexSet) {
         store.contacts.remove(atOffsets: offsets)
