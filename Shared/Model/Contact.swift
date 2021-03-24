@@ -11,6 +11,7 @@ import SwiftUI
 class Contact: Identifiable, ObservableObject {
     
     @Published var id = UUID()
+    @Published var group: Color
     @Published var picture: String
     @Published var name: String
     @Published var nickname: String
