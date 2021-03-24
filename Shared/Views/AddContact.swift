@@ -183,13 +183,13 @@ struct AddContact: View {
 
                 // DEBUG:
                 print("Instagram data decoded from JSON successfully")
-                print("The bio is: \(decodedInstagramInfo.biography)")
+                print("The bio is: \(decodedInstagramInfo.user.biography)")
 
                 // Now, update the UI on the main thread
                 DispatchQueue.main.async {
 
                     // Assign the result to the contact info
-                    name = decodedInstagramInfo.full_name
+                    name = decodedInstagramInfo.user.full_name
 //                    description = decodedInstagramInfo.biography
 
                 }
