@@ -15,17 +15,17 @@ struct ContentView: View {
     @ObservedObject var store: ContactStore
     
     @State private var showingAddContact = false
-
+    
     var body: some View {
         
         NavigationView {
             List {
-                ForEach(store.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: store)) {
-                        ContactListView(contact: contact)
+                    ForEach(store.contacts) { contact in
+                        NavigationLink(destination: ContactInfo(contact: contact, store: store)) {
+                            ContactListView(contact: contact)
+                        }
                     }
-                }
-                .onDelete(perform: deleteItems)
+                    .onDelete(perform: deleteItems)
             }
             .navigationTitle ("Contacts")
             .toolbar{

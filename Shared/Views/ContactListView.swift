@@ -18,6 +18,7 @@ struct ContactListView: View {
             //                .frame(width: 50.0, height: 50.0)
             Text(contact.picture)
                 .font(.title)
+                .background(Color.orange)
             VStack(alignment: .leading) {
                 Text(contact.name)
                     .font(.headline)
