@@ -20,7 +20,7 @@ struct ContactOrganizationApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(store: contactsStore)
+            ContentView(familyStore: friendsStore, friendStore: familyStore, workStore: workStore, otherStore: otherStore)
         }
     }
 }
