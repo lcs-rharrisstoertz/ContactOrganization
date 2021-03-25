@@ -24,37 +24,47 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
-            List {
-                ForEach(familyStore.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: familyStore)) {
-                        ContactListView(contact: contact)
+            VStack {
+                Section(header: Text("Family")) {
+                    List {
+                        ForEach(familyStore.contacts) { contact in
+                            NavigationLink(destination: ContactInfo(contact: contact, store: familyStore)) {
+                                ContactListView(contact: contact)
+                            }
+                        }
+                        .onDelete(perform: deleteFamilyItems)
                     }
                 }
-                .onDelete(perform: deleteFamilyItems)
-            }
-            List {
-                ForEach(friendStore.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: friendStore)) {
-                        ContactListView(contact: contact)
+                Section(header: Text("Friends")) {
+                    List {
+                        ForEach(friendStore.contacts) { contact in
+                            NavigationLink(destination: ContactInfo(contact: contact, store: friendStore)) {
+                                ContactListView(contact: contact)
+                            }
+                        }
+                        .onDelete(perform: deleteFriendItems)
                     }
                 }
-                .onDelete(perform: deleteFriendItems)
-            }
-            List {
-                ForEach(workStore.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: workStore)) {
-                        ContactListView(contact: contact)
+                Section(header: Text("Work/School")) {
+                    List {
+                        ForEach(workStore.contacts) { contact in
+                            NavigationLink(destination: ContactInfo(contact: contact, store: workStore)) {
+                                ContactListView(contact: contact)
+                            }
+                        }
+                        .onDelete(perform: deleteWorkItems)
                     }
                 }
-                .onDelete(perform: deleteWorkItems)
-            }
-            List {
-                ForEach(otherStore.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: otherStore)) {
-                        ContactListView(contact: contact)
+                Section(header: Text("Other")) {
+                    List {
+                        ForEach(otherStore.contacts) { contact in
+                            NavigationLink(destination: ContactInfo(contact: contact, store: otherStore)) {
+                                ContactListView(contact: contact)
+                            }
+                        }
+                        .onDelete(perform: deleteOtherItems)
                     }
                 }
-                .onDelete(perform: deleteOtherItems)
             }
             .navigationTitle("Contacts")
             .toolbar{
