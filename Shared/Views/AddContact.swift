@@ -42,9 +42,10 @@ struct AddContact: View {
                             Picker("Type", selection: $type) {
                                 Text("Family").tag("family")
                                 Text("Friend").tag("friend")
-                                Text("Work/School").tag("work")
+                                Text("Work").tag("work")
                                 Text("Other").tag("other")
                             }
+                            .pickerStyle(SegmentedPickerStyle())
                         }
                         Section(header: Text("Name")) {
                             TextField("Name", text: $name)
