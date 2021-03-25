@@ -9,8 +9,12 @@ import SwiftUI
 
 struct AddContact: View {
     
-    @ObservedObject var store: ContactStore
+    @ObservedObject var familyStore: ContactStore
+    @ObservedObject var friendStore: ContactStore
+    @ObservedObject var workStore: ContactStore
+    @ObservedObject var otherStore: ContactStore
     
+    @State private var type = ""
     @State private var name = ""
     @State private var picture = ""
     @State private var nickname = ""
@@ -34,7 +38,14 @@ struct AddContact: View {
             VStack{
                 Form {
                     Group {
-                        
+                        Section(header: Text("Contact Type")) {
+                            Picker("Type", selection: $type) {
+                                Text("Family").tag("family")
+                                Text("Friend").tag("friend")
+                                Text("Work/School").tag("work")
+                                Text("Other").tag("other")
+                            }
+                        }
                         Section(header: Text("Name")) {
                             TextField("Name", text: $name)
                         }
@@ -105,7 +116,29 @@ struct AddContact: View {
     
     func saveContact () {
         if name != "" || picture != "" || nickname != "" || description != "" || phoneNumber != "" || email != "" || facebook != "" || twitter != "" || youtube != "" || instagram != "" || snapchat != "" || tumblr != "" || reddit != "" || tiktok != "" || otherInfo != "" {
-            store.contacts.append(Contact(name: name,
+            switch type {
+            case "family":
+                store.family.append(Contact(type: "other",
+                                              name: name,
+                                              picture: picture,
+                                              nickname: nickname,
+                                              description: description,
+                                              phoneNumber: phoneNumber,
+                                              email: email,
+                                              facebook: facebook,
+                                              twitter: twitter,
+                                              youtube: youtube,
+                                              instagram: instagram,
+                                              snapchat: snapchat,
+                                              tumblr: tumblr,
+                                              reddit: reddit,
+                                              tiktok: tiktok,
+                                              otherInfo: otherInfo))
+            default:
+                break
+            }
+            store.contacts.append(Contact(type: "other",
+                                          name: name,
                                           picture: picture,
                                           nickname: nickname,
                                           description: description,
