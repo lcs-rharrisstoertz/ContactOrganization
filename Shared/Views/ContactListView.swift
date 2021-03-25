@@ -5,6 +5,9 @@
 //  Created by Harris-Stoertz, Rowan on 2021-03-18.
 //
 
+
+//this is a composable view used in ContentView that gives a brief overview of the contacts
+
 import SwiftUI
 
 struct ContactListView: View {

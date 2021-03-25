@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Contact: Identifiable, ObservableObject {
+class Contact: Identifiable, ObservableObject {//each contact is an instance of this class
     
     @Published var id = UUID()
     @Published var picture: String

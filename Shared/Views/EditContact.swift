@@ -5,7 +5,7 @@
 //  Created by Harris-Stoertz, Rowan on 2021-03-22.
 //
 
-import SwiftUI
+//this view allows the user to edit information about a contact. It contains text fields, which should automatically update the information as the user types
 
 import SwiftUI
 

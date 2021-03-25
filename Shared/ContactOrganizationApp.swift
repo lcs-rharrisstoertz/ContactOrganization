@@ -10,9 +10,6 @@ import SwiftUI
 @main
 struct ContactOrganizationApp: App {
     
-    // Create the source of truth
-    @StateObject private var contactsStore = ContactStore()
-    
     @StateObject private var friendsStore = ContactStore()
     @StateObject private var familyStore = ContactStore()
     @StateObject private var workStore = ContactStore()

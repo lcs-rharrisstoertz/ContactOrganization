@@ -24,6 +24,7 @@ class ContactStore: ObservableObject {
                 Contact(name: "Magnus", picture: "😺", nickname: "Maggie", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
                 Contact(name: "Zephyr", picture: "🐱", nickname: "Zephyr", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat")
             ])
+            //this causes my cats to be passed in for every contact type, but I'm leaving it like this because it's easiest to test the app like this
         } else {
             // Otherwise initialize with list of contacts provided
             self.contacts = contacts

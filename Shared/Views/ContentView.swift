@@ -27,6 +27,10 @@ struct ContentView: View {
             VStack {
                 Section(header: Text("Family")) {
                     List {
+                        /*
+                         This code iterates through the list of family contacts. For each contact, a view with a short preview of the contact is displayed. When clicked on, the user will be taken to another view containing more detailed information on the contact. The next three lists are similar, differing only in the contact type they display and affect.
+                         Ideally, I would've turned this into 4 instances of the same reusable view to simplify the code, but I ran out of time.
+                         */
                         ForEach(familyStore.contacts) { contact in
                             NavigationLink(destination: ContactInfo(contact: contact, store: familyStore)) {
                                 ContactListView(contact: contact)
@@ -70,7 +74,7 @@ struct ContentView: View {
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button("New contact") {
-                        showingAddContact = true
+                        showingAddContact = true//when button is clicked, a view appears allowing the user to add a new contact
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading){
@@ -78,10 +82,10 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddContact) {
-                AddContact(familyStore: familyStore, friendStore: friendStore, workStore: workStore, otherStore: otherStore, showing: $showingAddContact)
+                AddContact(familyStore: familyStore, friendStore: friendStore, workStore: workStore, otherStore: otherStore, showing: $showingAddContact)//displays AddContact view
             }
         }
-        .onAppear() {
+        .onAppear() {//when this view opens, all contacts are sorted in alphabetical order
             familyStore.contacts = familyStore.contacts.sorted {
                 $0.name < $1.name
             }
