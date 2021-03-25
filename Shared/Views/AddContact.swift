@@ -118,7 +118,7 @@ struct AddContact: View {
         if name != "" || picture != "" || nickname != "" || description != "" || phoneNumber != "" || email != "" || facebook != "" || twitter != "" || youtube != "" || instagram != "" || snapchat != "" || tumblr != "" || reddit != "" || tiktok != "" || otherInfo != "" {
             switch type {
             case "family":
-                store.family.append(Contact(type: "other",
+                familyStore.contacts.append(Contact(type: "family",
                                               name: name,
                                               picture: picture,
                                               nickname: nickname,
@@ -134,28 +134,72 @@ struct AddContact: View {
                                               reddit: reddit,
                                               tiktok: tiktok,
                                               otherInfo: otherInfo))
+                familyStore.contacts = familyStore.contacts.sorted {
+                    $0.name < $1.name
+                }
+            case "friend":
+                familyStore.contacts.append(Contact(type: "friend",
+                                              name: name,
+                                              picture: picture,
+                                              nickname: nickname,
+                                              description: description,
+                                              phoneNumber: phoneNumber,
+                                              email: email,
+                                              facebook: facebook,
+                                              twitter: twitter,
+                                              youtube: youtube,
+                                              instagram: instagram,
+                                              snapchat: snapchat,
+                                              tumblr: tumblr,
+                                              reddit: reddit,
+                                              tiktok: tiktok,
+                                              otherInfo: otherInfo))
+                friendStore.contacts = friendStore.contacts.sorted {
+                    $0.name < $1.name
+                }
+            case "work":
+                familyStore.contacts.append(Contact(type: "work",
+                                              name: name,
+                                              picture: picture,
+                                              nickname: nickname,
+                                              description: description,
+                                              phoneNumber: phoneNumber,
+                                              email: email,
+                                              facebook: facebook,
+                                              twitter: twitter,
+                                              youtube: youtube,
+                                              instagram: instagram,
+                                              snapchat: snapchat,
+                                              tumblr: tumblr,
+                                              reddit: reddit,
+                                              tiktok: tiktok,
+                                              otherInfo: otherInfo))
+                workStore.contacts = workStore.contacts.sorted {
+                    $0.name < $1.name
+                }
+            case "other":
+                familyStore.contacts.append(Contact(type: "other",
+                                              name: name,
+                                              picture: picture,
+                                              nickname: nickname,
+                                              description: description,
+                                              phoneNumber: phoneNumber,
+                                              email: email,
+                                              facebook: facebook,
+                                              twitter: twitter,
+                                              youtube: youtube,
+                                              instagram: instagram,
+                                              snapchat: snapchat,
+                                              tumblr: tumblr,
+                                              reddit: reddit,
+                                              tiktok: tiktok,
+                                              otherInfo: otherInfo))
+                otherStore.contacts = otherStore.contacts.sorted {
+                    $0.name < $1.name
+                }
             default:
                 break
             }
-            store.contacts.append(Contact(type: "other",
-                                          name: name,
-                                          picture: picture,
-                                          nickname: nickname,
-                                          description: description,
-                                          phoneNumber: phoneNumber,
-                                          email: email,
-                                          facebook: facebook,
-                                          twitter: twitter,
-                                          youtube: youtube,
-                                          instagram: instagram,
-                                          snapchat: snapchat,
-                                          tumblr: tumblr,
-                                          reddit: reddit,
-                                          tiktok: tiktok,
-                                          otherInfo: otherInfo))
-        }
-        store.contacts = store.contacts.sorted {
-            $0.name < $1.name
         }
     }
     func fetchInstagramInfo(username: String) {
@@ -243,6 +287,6 @@ struct AddContact: View {
 }
 struct AddContact_Previews: PreviewProvider {
     static var previews: some View {
-        AddContact(store: testStore, showing: .constant(true))
+        AddContact(familyStore: testStore, friendStore: testStore, workStore: testStore, otherStore: testStore, showing: .constant(true))
     }
 }
