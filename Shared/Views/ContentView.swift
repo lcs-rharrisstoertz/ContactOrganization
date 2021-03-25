@@ -12,7 +12,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var store: ContactStore
+    @ObservedObject var familyStore: ContactStore
+    @ObservedObject var friendStore: ContactStore
+    @ObservedObject var workStore: ContactStore
+    @ObservedObject var otherStore: ContactStore
     
     @State private var showingAddContact = false
     
@@ -20,12 +23,36 @@ struct ContentView: View {
         
         NavigationView {
             List {
-                ForEach(store.contacts) { contact in
-                    NavigationLink(destination: ContactInfo(contact: contact, store: store)) {
+                ForEach(familyStore.contacts) { contact in
+                    NavigationLink(destination: ContactInfo(contact: contact, store: familyStore)) {
                         ContactListView(contact: contact)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteFamilyItems)
+            }
+            List {
+                ForEach(friendStore.contacts) { contact in
+                    NavigationLink(destination: ContactInfo(contact: contact, store: friendStore)) {
+                        ContactListView(contact: contact)
+                    }
+                }
+                .onDelete(perform: deleteFriendItems)
+            }
+            List {
+                ForEach(workStore.contacts) { contact in
+                    NavigationLink(destination: ContactInfo(contact: contact, store: workStore)) {
+                        ContactListView(contact: contact)
+                    }
+                }
+                .onDelete(perform: deleteWorkItems)
+            }
+            List {
+                ForEach(otherStore.contacts) { contact in
+                    NavigationLink(destination: ContactInfo(contact: contact, store: otherStore)) {
+                        ContactListView(contact: contact)
+                    }
+                }
+                .onDelete(perform: deleteOtherItems)
             }
             .navigationTitle("Contacts")
             .toolbar{
@@ -39,22 +66,40 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddContact) {
-                AddContact(store:store, showing: $showingAddContact)
+                AddContact(familyStore: familyStore, friendStore: friendStore, workStore: workStore, otherStore: otherStore, showing: $showingAddContact)
             }
         }
         .onAppear() {
-            store.contacts = store.contacts.sorted {
+            familyStore.contacts = familyStore.contacts.sorted {
+                $0.name < $1.name
+            }
+            friendStore.contacts = friendStore.contacts.sorted {
+                $0.name < $1.name
+            }
+            workStore.contacts = workStore.contacts.sorted {
+                $0.name < $1.name
+            }
+            otherStore.contacts = otherStore.contacts.sorted {
                 $0.name < $1.name
             }
         }
     }
-    func deleteItems(at offsets: IndexSet) {
-        store.contacts.remove(atOffsets: offsets)
+    func deleteFamilyItems(at offsets: IndexSet) {
+        familyStore.contacts.remove(atOffsets: offsets)//not good abstraction to have these 4 functions- I should find a way to turn this into one function
+    }
+    func deleteFriendItems(at offsets: IndexSet) {
+        friendStore.contacts.remove(atOffsets: offsets)
+    }
+    func deleteWorkItems(at offsets: IndexSet) {
+        workStore.contacts.remove(atOffsets: offsets)
+    }
+    func deleteOtherItems(at offsets: IndexSet) {
+        otherStore.contacts.remove(atOffsets: offsets)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: testStore)
+        ContentView(familyStore: testStore, friendStore: testStore, workStore: testStore, otherStore: testStore)
     }
 }
