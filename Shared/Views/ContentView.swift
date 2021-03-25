@@ -8,6 +8,8 @@
 // and another tutorial from https://www.hackingwithswift.com/example-code/arrays/how-to-sort-an-array-using-sort
 
 
+//ideally I would use one view repeated 4 times rather than 4 chunks of near-identical code, but I don't currently have time
+
 import SwiftUI
 
 struct ContentView: View {

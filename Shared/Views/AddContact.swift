@@ -118,8 +118,7 @@ struct AddContact: View {
         if name != "" || picture != "" || nickname != "" || description != "" || phoneNumber != "" || email != "" || facebook != "" || twitter != "" || youtube != "" || instagram != "" || snapchat != "" || tumblr != "" || reddit != "" || tiktok != "" || otherInfo != "" {
             switch type {
             case "family":
-                familyStore.contacts.append(Contact(type: "family",
-                                              name: name,
+                familyStore.contacts.append(Contact(name: name,
                                               picture: picture,
                                               nickname: nickname,
                                               description: description,
@@ -138,8 +137,7 @@ struct AddContact: View {
                     $0.name < $1.name
                 }
             case "friend":
-                familyStore.contacts.append(Contact(type: "friend",
-                                              name: name,
+                friendStore.contacts.append(Contact(name: name,
                                               picture: picture,
                                               nickname: nickname,
                                               description: description,
@@ -158,8 +156,7 @@ struct AddContact: View {
                     $0.name < $1.name
                 }
             case "work":
-                familyStore.contacts.append(Contact(type: "work",
-                                              name: name,
+                workStore.contacts.append(Contact(name: name,
                                               picture: picture,
                                               nickname: nickname,
                                               description: description,
@@ -178,8 +175,7 @@ struct AddContact: View {
                     $0.name < $1.name
                 }
             case "other":
-                familyStore.contacts.append(Contact(type: "other",
-                                              name: name,
+                otherStore.contacts.append(Contact(name: name,
                                               picture: picture,
                                               nickname: nickname,
                                               description: description,

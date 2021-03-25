@@ -11,7 +11,6 @@ import SwiftUI
 class Contact: Identifiable, ObservableObject {
     
     @Published var id = UUID()
-    @Published var type: String
     @Published var picture: String
     @Published var name: String
     @Published var nickname: String
@@ -29,9 +28,8 @@ class Contact: Identifiable, ObservableObject {
     @Published var otherInfo: String
     
     
-    internal init(id: UUID = UUID(), type: String, name: String, picture: String, nickname: String, description: String, phoneNumber: String, email: String, facebook: String, twitter: String, youtube: String, instagram: String, snapchat: String, tumblr: String, reddit: String, tiktok: String, otherInfo: String) {
+    internal init(id: UUID = UUID(), name: String, picture: String, nickname: String, description: String, phoneNumber: String, email: String, facebook: String, twitter: String, youtube: String, instagram: String, snapchat: String, tumblr: String, reddit: String, tiktok: String, otherInfo: String) {
         self.id = id
-        self.type = type
         self.picture = picture
         self.name = name
         self.nickname = nickname
@@ -51,12 +49,8 @@ class Contact: Identifiable, ObservableObject {
 }
 
 let sampleContacts = [
-    Contact(type: "other", name: "Moonshadow", picture: "😾", nickname: "Moony", description: "My cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
-    Contact(type: "other", name: "Magnus", picture: "😺", nickname: "Maggie", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
-    Contact(type: "other", name: "Zephyr", picture: "🐱", nickname: "Zephyr", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat")
+    Contact(name: "Moonshadow", picture: "😾", nickname: "Moony", description: "My cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
+    Contact(name: "Magnus", picture: "😺", nickname: "Maggie", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat"),
+    Contact(name: "Zephyr", picture: "🐱", nickname: "Zephyr", description: "Another cat", phoneNumber: "n/a (cat)", email: "n/a (cat)", facebook: "n/a (cat)", twitter: "n/a (cat)", youtube: "n/a (cat)", instagram: "n/a (cat)", snapchat: "n/a (cat)", tumblr: "n/a (cat)", reddit: "n/a (cat)", tiktok: "n/a (cat)", otherInfo: "Cat")
 ]
-
-enum type {
-    case family, friend, work, other
-}
 
